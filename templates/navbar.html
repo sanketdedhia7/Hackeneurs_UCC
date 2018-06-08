@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<!-- /Added by HTTrack -->
+
+<head>
+    <title>Travel Share</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name=description content="Share and explore travel destinations around the world with others" />
+    <meta name="keywords" content="Travel, Share, travelshare, explore, destinations, users, discover, places, connect, world, flyers, travelflyers"
+    />
+    <link rel="shortcut icon" href="{% static 'src/public/css/Travel-Share-Icon.png' %}" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>
+    <link rel="prefetch stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800,600">
+
+    <link rel="stylesheet" href="{% static 'src/public/css/libs/sweetalert.css' %}">
+    <link rel="stylesheet" href="{% static 'src/public/css/app.css' %}">
+    <link rel="stylesheet" href="{% static 'src/public/css/navigation.css' %}">
+    <link rel="stylesheet" href="{% static 'src/public/css/libs/typeahead.css' %}">
+
+    <!-- Lity lightbox files -->
+    <link rel="stylesheet" href="{% static 'src/public/css/lity.css' %}">
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="{% static 'authen/css/materialize.min.css' %}" media="screen,projection" />
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'authen/css/font-awesome.min.css' %}">
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway:200" rel="stylesheet">
+
+    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="{% static 'explore/css/footer-distributed-with-address-and-phones.css' %}">
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+    <style type="text/css">
+        .dropdown-content {
+
+            min-width: 123px !important;
+            max-height: auto;
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <ul id="dropdown1" class="dropdown-content">
+        <li>
+            <span style="color:#000;">{{profile.user.username}}</span>
+        </li>
+        <li class="divider"></li>
+        <li>
+            <a href="/authen/viewprofile/">My Profile</a>
+        </li>
+         <li class="divider"></li>
+        <li>
+            <a href="/authen/topics/">My Topics</a>
+        </li>
+         <li class="divider"></li>
+        <li>
+            <a href="/authen/viewprofile/">Notifiations!</a>
+        </li>
+        <li class="divider"></li>
+        <li>
+            <a href="/authen/myaccount/">My Account</a>
+        </li>
+        <li class="divider"></li>
+        <li>
+            <a href="/authen/logout">Logout</a>
+        </li>
+    </ul>
+
+    <nav class="nav-extended">
+        <div class="nav-wrapper blue-grey darken-3">
+            <div class="container">
+
+                <a href="/home/" class="brand-logo"><i class="large material-icons">landscape</i><span id="logo1">Crypto</span><span id="logo2">Folio</span></a>
+               
+                <ul class="right hide-on-med-and-down">
+                     {% if profile  %}
+
+
+
+
+
+
+
+                      <li>    
+                   <div class="searcher" style="margin-bottom: -12px;">
+                      <div class="col s12 " >
+                        <div class="" id="topbarsearch">
+                          <div class="input-field col s6 s12 black-text" >
+                            <i class="white-text material-icons prefix">search</i>
+                            <input type="text" placeholder="search keyword" id="autocomplete-input" class="autocomplete black-text" style="background-color: white;padding-left: 5px;" >
+                            </div>
+                          </div>
+                        </div>
+                      </div>          
+                  </li>           
+
+
+
+
+                     <li><a href="/dashboard/home/">Dashboard</a></li>
+                      <li><a href="/friends/">User Search</a></li>
+
+                     <!-- <li><a href="/leaderboard/">Leaderboard</a></li>  -->
+                      {% endif %}
+                   
+                   
+                    <li><a href="/about/">About Us</a></li>
+                    <li><a href="/faq/">FAQ</a></li>
+                    {% if profile  %}
+                    
+                        {% if profile.profile_pic %}
+                      
+
+                        <li id="profilepic"><a class="dropdown-button" href="#!" data-activates="dropdown1" data-beloworigin="true"><img style = " height : 30px; margin-bottom: -10px;" src="{{ profile.profile_pic.url }}"><i class="material-icons right">arrow_drop_down</i></a></li>
+                        {% endif %}
+                                
+                    {% else %}
+                        <li><a href="/authen/login/">Log In</a></li>
+                        <li><a href="/authen/register/">Sign Up</a></li>
+                    {% endif %}
+                </ul>
+
+               <ul id="slide-out" class="side-nav">
+    <li><div class="user-view">
+      <div class="background">
+        <img src="https://2.bp.blogspot.com/-2RewSLZUzRg/U-9o6SD4M6I/AAAAAAAADIE/voax99AbRx0/s1600/14%2B-%2B1%2B%281%29.jpg">
+      </div>
+      
+       {% if profile  %}                   
+         {% if profile.profile_pic %}
+      <a href="#!user"><img class="circle" src="{{ profile.profile_pic.url }}"></a>
+      <a href="#!name"><span class="white-text name">{{profile.user.username}}</span></a>
+      <a href="#!email"><span class="white-text email">{{profile.email}}</span></a>
+    </div></li>  
+        
+
+        
+        
+    <li><a class="waves-effect"  href="/authen/viewprofile/">My Profile</a></li>
+     <li><a href="/authen/myaccount/">My Account</a></li>  
+       <li><a class="waves-effect"  href="/dashboard/home/">Dashboard</a></li>
+        <li><a href="/friends/">Bloggers</a></li>
+                      <li><a href="/leaderboard/">Leaderboard</a></li>
+    <li><a  class="waves-effect" href="/home/">Home</a></li>
+    <li><a class="waves-effect"  href="/about/">About us</a></li>
+    <li><a class="waves-effect"  href="/faq/">FAQ</a></li>
+    
+   
+    
+    <li><a class="waves-effect" href="/authen/logout/">Logout</a></li>
+          {% endif %}
+      
+
+       {% else %}
+       <a href="#"><span class="white-text email">Not logged in</span></a>
+    </div></li> 
+<li><a  class="waves-effect" href="/home/">Home</a></li>
+<li><a class="waves-effect"  href="/about/">About us</a></li>
+ <li><a class="waves-effect"  href="/faq/">FAQ</a></li>
+    <li><a  class="waves-effect" href="/authen/login/">Login</a></li>
+<li><a  class="waves-effect" href="/authen/register/">Sign up</a></li>
+    
+   
+       {% endif %}
+  </ul>
+        <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>      </div>
+
+              
+        </div>
+
+    </nav>
+
+    {% block content %} {% endblock content %}
+
+    <!-- close container -->
+
+    <!-- JavaScripts -->
+
+    <script src="{% static 'src/public/js/libs/jquery.js' %}"></script>
+    <script type="text/javascript" src="{% static '/src/public/js/libs/bootstrap.js' %}"></script>
+    <script src="{% static 'src/public/js/libs/sweetalert.js' %}"></script>
+    <script src="{% static 'src/public/js/libs/FitText.js' %}"></script>
+    <script src="{% static 'src/public/js/main.js' %}"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="{% static 'authen/js/materialize.min.js' %}"></script>
+
+    <style type="text/css">
+        body {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1 0 auto;
+        }
+    </style>
+
+    <footer class="footer-distributed">
+
+        <div class="footer-left">
+
+            <h3>Crypto
+                <span>Folio</span>
+            </h3>
+
+            <p class="footer-links">
+                <a href="/home/">Home</a> ·
+                <a href="/about/">About</a> ·
+                <a href="/faq/">FAQ</a> 
+
+                <!-- <a href="/about/">Contact</a> -->
+
+                <!--<a href="#">Contact</a>-->
+
+            </p>
+
+            <p class="footer-company-name">Origin Incorporated &copy; 2017</p>
+        </div>
+
+        <div class="footer-center">
+
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p>
+                    <span>S.V. Road</span> Mumbai, India</p>
+            </div>
+
+            <div>
+                <i class="fa fa-phone"></i>
+                <p>+1 555 123456</p>
+            </div>
+
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p>
+                    <a href="mailto:support@company.com">support@theorigin.com</a>
+                </p>
+            </div>
+
+        </div>
+
+        <div class="footer-right">
+
+            <p class="footer-company-about">
+                <span>About the company</span> Origin Incorporated helps to make beautiful products to help people with creative
+                ideas succeed.
+            </p>
+
+            <div class="footer-icons">
+
+                <a href="#">
+                    <i class="fa fa-facebook"></i>
+                </a>
+                <a href="#">
+                    <i class="fa fa-twitter"></i>
+                </a>
+                <a href="#">
+                    <i class="fa fa-linkedin"></i>
+                </a>
+                <a href="#">
+                    <i class="fa fa-github"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $('select').material_select();
+        $(".button-collapse").sideNav();
+    });
+</script>
+
+</html>
