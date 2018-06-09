@@ -1,6 +1,6 @@
-anand12z asd
+Hackeneurs
 
-# Tourism-Management-System
+# CryptoFolio
 
 This web development project was built as a part of the courses, **Web Technologies** and **Structured and Object Oriented Analysis and Design**.
 
@@ -16,8 +16,8 @@ You need to have python 3 installed. That's it!
 Follow the below steps : 
 
 ```
-git clone https://github.com/ikbalsingh/Tourism-Management-System.git
-cd Tourism-Management-System
+git clone https://github.com/sprerak48/Hackeneurs_UCC.git
+cd Hackeneurs_UCC
 pip install -r requirements.txt
 ```
 
