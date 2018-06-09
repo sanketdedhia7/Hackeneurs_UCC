@@ -1,0 +1,58 @@
+
+{% load static %} 
+
+
+
+
+{% block content %}
+<head>
+  <meta charset="UTF-8">
+  <title>Cryptocurrency Calculator</title>
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Fira+Sans'>
+
+      <link rel="stylesheet" href="{% static 'explore/css/convert.css' %}">
+
+  
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <h1>Cryptocurrency Converter</h1>
+    <span>This cryptocurrency converter was made with the <a href="https://cryptocompare.com/api">CryptoCompare API</a></span>
+
+    <form>
+        <select name="currencyFrom" id="currencyFrom">
+            <option value="">-- Select a currency --</option>
+            <option value="BTC">BTC</option>
+            <option value="ETH">ETH</option>
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+        </select>
+        <input type="number" name="amountFrom" id="amountFrom">
+        <select name="currencyTo" id="currencyTo">
+            <option value="">-- Select a currency --</option>
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="BTC">BTC</option>
+            <option value="ETH">ETH</option>
+        </select>
+    </form>
+
+    <p id="result">Select some currencies and an amount to convert</p>
+     <span>Return Home <a href="http://127.0.0.1:8000/home/">Click Here</a></span>
+</div>
+  
+  
+
+    <script  src="{% static 'explore/js/convert.js' %}"></script>
+
+
+
+
+</body>
+{% endblock content %}
+

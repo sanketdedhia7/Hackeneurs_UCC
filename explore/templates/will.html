@@ -1,0 +1,151 @@
+
+{% load static %} 
+{% block content %}
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Legacy - Decentralized Will</title>
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'explore/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="{% static 'explore/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link href="{% static 'explore/vendor/magnific-popup/magnific-popup.css' %}" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'explore/css/freelancer.min.css' %}" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Digital Will</a>
+        <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Create Will</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="masthead bg-primary text-white text-center">
+      <div class="container">
+        <img class="img-fluid mb-5 d-block mx-auto" src="{% static 'explore/img/profile.png' %}" alt="">
+        <h1 class="text-uppercase mb-0">Create your Legacy.</h1>
+        <hr class="star-light">
+        <h2 class="font-weight-light mb-0">A decentralized will system to automatically manage ether and property.</h2>
+      </div>
+    </header>
+
+    <!-- Portfolio Grid Section -->
+    <section class="portfolio" id="portfolio">
+      <div class="container" style="text-align:center;">
+        <h2 class="text-center text-uppercase text-secondary mb-0">Welcome to your will.</h2>
+        <hr class="star-dark mb-5">
+          <p class="lead">Please enter the following information.</p>
+            <p class="lead">Your Legacy address is: <span id="willAddress"></span>.</p>
+            <form>
+            <label for="name">Beneficiary</label>
+            <input type="name" class="form-control form-control-lg" id="f1" placeholder="Address of beneficiary">
+          <div class="form-group">
+            <label for="address">Beneficiary Amount</label>
+            <input type="address" class="form-control form-control-lg" id="f2" placeholder="Amount in Propy tokens">
+          </div>
+          <button class="btn btn-lg btn-success" id="addBeneficiary" type="button">Add beneficiary</button>
+          <br />
+          <br />
+          <div class="form-group">
+            <label for="name">Trustee</label>
+            <input type="name" class="form-control form-control-lg" id="t1" placeholder="Address of trustee">
+          </div>
+          <button class="btn btn-lg btn-success" id="wellTrustee" type="button">Well Trustee</button>
+          <button class="btn btn-lg btn-success" id="addTrustee" type="button">Add Trustee</button>
+          <br />
+          <br />
+          <p class="lead">WARNING: Self-destruct Legacy to recieve your tokens. This action is not revertable. </p>
+          <button class="btn btn-xl btn-danger" id="kill" type="button">Self-destruct</button>
+        </form>
+    </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="bg-primary text-white mb-0" id="about">
+      <div class="container">
+        <h2 class="text-center text-uppercase text-white">About</h2>
+        <hr class="star-light mb-5">
+        <div class="row">
+          <div class="col-lg-4 ml-auto">
+            <p class="lead">Covenant is a decentralized will built on top of the Etherum blockchain. Because of its decentralized nature, Covenant is completely controlled by the blockchain, so payments are secured with the power of millions of computers around the world.</p>
+          </div>
+          <div class="col-lg-4 mr-auto">
+            <p class="lead">The easiest way to use Covenant is to download the Metamask wallet from the link below, send your Metamask wallet some ether using an exchange of sorts, and filling out the information at the top of the page.</p>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <a class="btn btn-xl btn-outline-light" href="https://metamask.io">
+            <i class="fa fa-download mr-2"></i>
+            Get Metamask
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+
+    <div class="copyright py-4 text-center text-white" id="contact">
+      <div class="container">
+        <p>Built in 36 hours at the UCC hackthon.</p>
+        <small>Hackeneurs</small>
+      </div>
+    </div>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-to-top d-lg-none position-fixed ">
+      <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
+        <i class="fa fa-chevron-up"></i>
+      </a>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js' %}"></script>
+    <script src="{% static 'explore/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="{% static 'explore/vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+    <script src="{% static 'explore/vendor/magnific-popup/jquery.magnific-popup.min.js' %}"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="{% static 'explore/js/freelancer.min.js' %}"></script>
+    <script src="{% static 'explore/js/truffle-contract.js' %}"></script>
+    <script src="{% static 'explore/js/web3.min.js' %}"></script>
+    <script src="{% static 'explore/js/app.js' %}"></script>
+
+
+  </body>
+{% endblock content %}

@@ -11,12 +11,41 @@ def dashboard_home(request):
     if request.user.is_authenticated:
         pr = Profile.objects.get(user=request.user)
         data = Flyer.objects.all()
-        return render(request, 'dashboard.html', {'profile': pr, 'allflyers': data})
+        return render(request, 'dashboardNEW.html', {'profile': pr, 'allflyers': data})
     else:
         return redirect('/authen/login/')
 
+def crypto(request):
+    if request.user.is_authenticated:
+        pr = Profile.objects.get(user=request.user)
+        data = Flyer.objects.all()
+        return render(request, 'crypto.html', {'profile': pr, 'allflyers': data})
+    else:
+        return redirect('/authen/login/')
 
+def convert(request):
+    if request.user.is_authenticated:
+        pr = Profile.objects.get(user=request.user)
+        data = Flyer.objects.all()
+        return render(request, 'convert.html', {'profile': pr, 'allflyers': data})
+    else:
+        return redirect('/authen/login/')
 
+def will(request):
+    if request.user.is_authenticated:
+        pr = Profile.objects.get(user=request.user)
+        data = Flyer.objects.all()
+        return render(request, 'will.html', {'profile': pr, 'allflyers': data})
+    else:
+        return redirect('/authen/login/')
+
+def predict(request):
+    if request.user.is_authenticated:
+        pr = Profile.objects.get(user=request.user)
+        data = Flyer.objects.all()
+        return render(request, 'predict.html', {'profile': pr, 'allflyers': data})
+    else:
+        return redirect('/authen/login/')
 
 def place(request, p):
     if request.user.is_authenticated:

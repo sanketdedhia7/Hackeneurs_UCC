@@ -1,0 +1,95 @@
+html,
+body {
+    height: 100%;
+}
+
+a {
+    color: lighten(#ff145a, 10%);
+}
+
+h1,
+p,
+a,
+span,
+input,
+select,
+option {
+    font-family: 'Fira Sans', sans-serif;
+}
+
+$color-primary: #ff145a;
+$color-secondary: #1a1a1a;
+
+body {
+    transition: background 300ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $color-secondary;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    background-position: center;
+    background-size: cover;
+    
+    &.BTC {
+        background-color: rgba(0,0,0,0.7);
+        background-image: url('https://steemit-production-imageproxy-upload.s3.amazonaws.com/DQmTCUD6ZfRE8PspR78pEgFHBGyet8VNqkajGvasbYGFjyN');
+    }
+    
+    &.ETH {
+        background-color: rgba(0, 0, 0, 0.7);
+        background-image: url('https://karl.tech/content/images/2016/04/ethereum-road-network.jpg');
+    }
+}
+
+.wrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    
+    h1 {
+        margin-bottom: 10px;
+        color: $color-primary;
+    }
+    
+    form {
+        display: flex;
+        
+        input,
+        select {
+            border: 0;
+            background: $color-primary;
+            padding: 10px;
+            color: #fff;
+            
+            &:not(:last-child) {
+                margin-right: 10px;
+            }
+            
+            &:focus {
+                outline: 0;
+            }
+        }
+        
+        option {
+            
+            &:selected {
+                background: $color-secondary;
+            }
+            
+            &:checked {
+                background: $color-secondary;
+            }
+        }
+    }
+    
+    p,
+    span {
+        color: #fff;
+    }
+    
+    span {
+        margin-bottom: 50px;
+    }
+}
