@@ -221,3 +221,42 @@ def myaccount(request):
         return render(request, 'account.html', {"profile": pr })
     else:
         return redirect('/authen/login/')
+
+
+
+
+
+def buy(request):
+    if request.user.is_authenticated:
+        pr = Profile.objects.get(user=request.user)
+        if request.method == 'POST':
+            username = request.POST.get('username')
+            email = request.POST.get('email')
+            bio = request.POST.get('bio')
+            photo = request.FILES.get('photo')
+            description = request.POST['description']
+            cryptoname = request.POST['cryptoname']
+            if cryptoname=='BTC':
+                pr.description1=pr.description1+int(description);
+            if cryptoname=='ETC':
+                pr.description2=pr.description2+int(description);
+            if cryptoname=='DGTC':
+                pr.description3=pr.description3+int(description);
+            
+
+            print(pr.description1);
+            print(pr.description2);
+            print(pr.description3);
+            
+            pr.save()
+                # pr.update(email=email,bio = bio,profile_pic = photo,confirmhash = tp)
+                #pr.email = email
+                #pr.bio = bio
+                #if photo is not None:
+                 #   pr.profile_pic = photo
+                
+            
+
+        return render(request, 'account.html', {"profile": pr })
+    else:
+        return redirect('/authen/login/')

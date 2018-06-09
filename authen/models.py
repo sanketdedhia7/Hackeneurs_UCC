@@ -4,6 +4,10 @@ import hashlib
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    description1 = models.IntegerField(default=0, blank=True, null=True)
+    description2 = models.IntegerField(default=0, blank=True, null=True)
+    description3 = models.IntegerField(default=0, blank=True, null=True)
+    cryptoname = models.CharField(max_length=500, blank=True, null=True)
     email = models.EmailField(unique=True)
     bio = models.CharField(max_length=500, blank=True, null=True)
     profile_pic = models.ImageField(

@@ -41,6 +41,18 @@
       </div>
     </header>
 
+
+
+
+
+
+
+
+
+
+
+
+
     <!-- Portfolio Grid Section -->
     <section class="portfolio" id="portfolio">
       <div class="container" style="text-align:center;">
@@ -48,26 +60,31 @@
         <hr class="star-dark mb-5">
           <p class="lead">Please enter the following information.</p>
             <p class="lead">Your Legacy address is: <span id="willAddress"></span>.</p>
-            <form>
+               
+<form class="col s12" method="POST" action="/dashboard/will/submit/" enctype="multipart/form-data">
+  {% csrf_token %}
             <label for="name">Beneficiary</label>
-            <input type="name" class="form-control form-control-lg" id="f1" placeholder="Address of beneficiary">
+            <input type="text" class="form-control form-control-lg" id="f1" placeholder="username of beneficiary" name ="f1">
+
+
+
           <div class="form-group">
-            <label for="address">Beneficiary Amount</label>
-            <input type="address" class="form-control form-control-lg" id="f2" placeholder="Amount in Propy tokens">
+            <label for="address">Beneficiary Amount percentage</label>
+            <input type="address" class="form-control form-control-lg" id="f2" placeholder="Amount percentage" name="f2">
           </div>
-          <button class="btn btn-lg btn-success" id="addBeneficiary" type="button">Add beneficiary</button>
+          <button class="btn btn-lg btn-success" id="addBeneficiary" type="button submit">Add beneficiary</button>
           <br />
           <br />
           <div class="form-group">
             <label for="name">Trustee</label>
-            <input type="name" class="form-control form-control-lg" id="t1" placeholder="Address of trustee">
+            <input type="name" class="form-control form-control-lg" id="t1" placeholder="Username of trustee" name=t1>
           </div>
-          <button class="btn btn-lg btn-success" id="wellTrustee" type="button">Well Trustee</button>
-          <button class="btn btn-lg btn-success" id="addTrustee" type="button">Add Trustee</button>
+          <button class="btn btn-lg btn-success" id="wellTrustee" type="button submit">Well Trustee</button>
+          <button class="btn btn-lg btn-success" id="addTrustee" type="button submit">Add Trustee</button>
           <br />
           <br />
           <p class="lead">WARNING: Self-destruct Legacy to recieve your tokens. This action is not revertable. </p>
-          <button class="btn btn-xl btn-danger" id="kill" type="button">Self-destruct</button>
+          <button class="btn btn-xl btn-danger" id="kill" type="button submit">Self-destruct</button>
         </form>
     </div>
     </section>
@@ -96,13 +113,7 @@
 
 
 
-    <div class="copyright py-4 text-center text-white" id="contact">
-      <div class="container">
-        <p>Built in 36 hours at the UCC hackthon.</p>
-        <small>Hackeneurs</small>
-      </div>
-    </div>
-
+   
     <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
     <div class="scroll-to-top d-lg-none position-fixed ">
       <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
@@ -116,15 +127,15 @@
     <script src="{% static 'explore/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 
     <!-- Plugin JavaScript -->
-    <script src="{% static 'explore/vendor/jquery-easing/jquery.easing.min.js' %}"></script>
-    <script src="{% static 'explore/vendor/magnific-popup/jquery.magnific-popup.min.js' %}"></script>
+   
 
     <!-- Custom scripts for this template -->
-    <script src="{% static 'explore/js/freelancer.min.js' %}"></script>
-    <script src="{% static 'explore/js/truffle-contract.js' %}"></script>
-    <script src="{% static 'explore/js/web3.min.js' %}"></script>
-    <script src="{% static 'explore/js/app.js' %}"></script>
+  
 
 
   </body>
+
+  <script>
+
+  </script>
 {% endblock content %}

@@ -15,15 +15,9 @@
 <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
 
 <style>
-  #map {
-    height: 100vh;
-  }
 
-  body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
+
+  
 
   #description {
     font-family: Roboto;
@@ -152,31 +146,61 @@
   #createflyer{
     width: 100%;
   }
+
+  .footer-distributed {
+    position: fixed;
+    height: 100px;
+    bottom: 0;
+    width: 100%;
+}
 </style>
 
 
-<a class="modal-trigger" id="trig" href="#modal1"><button class="btn createflyer" id="createflyer" onclick="flyer()">Want to add a question?</button></a>
+<a class="modal-trigger" id="trig" href="#modal1"><button class="btn createflyer" id="createflyer" onclick="flyer()">Buy crypto-currency</button></a>
 
-fghfghf
-fgh
-<form class="col s12" method="POST" action="/dashboard/place/lol/" enctype="multipart/form-data">
+
+
+
+            <ul id="dropdown11" class="dropdown-content">
+        
+       
+        <li>
+            <a class="aaa" href="#" onclick="coin1()">BTC</a>
+        </li>
+         <li class="divider"></li>
+        <li>
+            <a class="bbb" href="#"  onclick="coin2()">ETC</a>
+        </li>
+         <li class="divider"></li><li class="divider"></li>
+        <li>
+            <a class="ccc"  href="#"  onclick="coin3()">DGC</a>
+        </li>
+        <li class="divider"></li>
+    </ul>
+
+
+
+
+
+<form class="col s12" method="POST" action="/authen/buy/" enctype="multipart/form-data">
   {% csrf_token %}
   <div id="modal1" class="modal modal-fixed-footer">
     <div class="modal-content">
-      <div class="text-center center-align">Enter your question details</div>
+      <div class="text-center center-align">Enter the currency and value to buy</div>
       <hr>
       <div class="row">
         <div class="row">
           <div class="input-field col s12">
-            <input placeholder="" id="flyertitle" type="text" name="title">
-            <label for="flyertitle">Main question</label>
+
+            <a class="dropdown-button btn input" href="#!" data-activates="dropdown11" data-beloworigin="true">Choose your coin</a>
+            <label for="flyertitle"></label>
           </div>
           <div class="input-field col s12" style="margin-left: 1px">
-            <textarea class="areat input materialize-textarea"  name="desc"></textarea>
-            <label for="flydesc">Question description</label>
+             <input placeholder="" id="description" type="text" name="description">
+            <label for="flydesc">Value of currency to buy</label>
           </div>
         </div>
-        <div class="row"><span class="flyimg" for="flyimages">Choose Images to upload(if any):</span>
+       <!-- <div class="row"><span class="flyimg" for="flyimages">Choose Images to upload(if any):</span>
           <div class="input-field col s12">
             <input type="file" name="img" multiple>
           </div>
@@ -188,7 +212,12 @@ fgh
           </div>
         </div>
         <hr class="hrlin">
-       
+       -->
+        <div class="input-field col s12">
+          <input placeholder="" id="cryptoname" type="text" name="cryptoname">
+          <label for="flyertitle">crypto name</label>
+        </div>
+
          <div class="input-field col s12">
           <input placeholder="" id="date" type="text" name="date">
           <label for="flyertitle">date</label>
@@ -223,20 +252,34 @@ fgh
 </script>
 
 <script>
+
   $(document).ready(function () {
     $('.modal').modal();
+    $('.dropdown-trigger').dropdown();
   });
   var map;
   var marker;
   var resultflytitle = [];
   var flyeractive = 0;
   var markers = [];
+
+   function coin1() {
+$("#cryptoname").attr("value", "BTC");
+   }
+
+ function coin2() {
+$("#cryptoname").attr("value", "ETC");
+   }
+    function coin3() {
+$("#cryptoname").attr("value", "DGTC");
+   }
+
+
   function flyer() {
     digi();
     
     function digi() {
-      print(1);
-  var date = new Date(),
+      var date = new Date(),
       hour = date.getHours(),
       minute = checkTime(date.getMinutes()),
       ss = checkTime(date.getSeconds());

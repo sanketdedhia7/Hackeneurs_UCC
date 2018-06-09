@@ -12,4 +12,5 @@ urlpatterns = [
     url(r'^viewprofile', views.viewprofile),
      url(r'^topics', views.topics),
       url(r'^myaccount', views.myaccount),
+       url(r'^buy', views.buy),
 ]

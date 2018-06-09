@@ -22,8 +22,10 @@ urlpatterns = [
     url(r'place/(?P<p>[\w\-\_\ \,\.]+)/$', views.place),
     url(r'location/(?P<p>[\w\-\_\ \,\.]+)/$', views.location),
     url(r'home/$', views.dashboard_home),
+     url(r'main/$', views.dashboard),
     url(r'crypto/$', views.crypto),
     url(r'convert/$', views.convert),
      url(r'will/$', views.will),
+      url(r'will/submit/$', views.willsubmit),
       url(r'predict/$', views.predict),
 ]
