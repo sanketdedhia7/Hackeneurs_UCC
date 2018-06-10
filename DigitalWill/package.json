@@ -1,0 +1,24 @@
+{
+  "name": "digitalwill",
+  "version": "1.0.0",
+  "description": "blockchain",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "test",
+    "start": "npm run open",
+    "open": "concurrently \"http-server -a localhost -p 1234\" \"open http://localhost:1234/src/build\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sprerak48/Hackeneurs_UCC.git"
+  },
+  "author": "prerak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sprerak48/Hackeneurs_UCC/issues"
+  },
+  "homepage": "https://github.com/sprerak48/Hackeneurs_UCC#readme"
+}
