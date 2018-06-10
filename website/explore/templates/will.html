@@ -64,7 +64,7 @@
 <form class="col s12" method="POST" action="/dashboard/will/submit/" enctype="multipart/form-data">
   {% csrf_token %}
             <label for="name">Beneficiary</label>
-            <input type="text" class="form-control form-control-lg" id="f1" placeholder="username of beneficiary" name ="f1">
+            <input style="padding-bottom: 15px; line-height: 5px !important;" type="text" class="form-control form-control-lg" id="f1" placeholder="Username of beneficiary" name ="f1">
 
 
 
@@ -72,19 +72,23 @@
             <label for="address">Beneficiary Amount percentage</label>
             <input type="address" class="form-control form-control-lg" id="f2" placeholder="Amount percentage" name="f2">
           </div>
-          <button class="btn btn-lg btn-success" id="addBeneficiary" type="button submit">Add beneficiary</button>
+          <button style="padding-bottom: 35px;" class="btn btn-lg btn-success" id="addBeneficiary" type="button submit">Add beneficiary</button>
           <br />
           <br />
           <div class="form-group">
             <label for="name">Trustee</label>
             <input type="name" class="form-control form-control-lg" id="t1" placeholder="Username of trustee" name=t1>
           </div>
-          <button class="btn btn-lg btn-success" id="wellTrustee" type="button submit">Well Trustee</button>
-          <button class="btn btn-lg btn-success" id="addTrustee" type="button submit">Add Trustee</button>
+          <button style="padding-bottom: 35px;" class="btn btn-lg btn-success" id="wellTrustee" type="button">Well Trustee</button>
+          <button style="padding-bottom: 35px;" class="btn btn-lg btn-success" id="addTrustee" type="button">Add Trustee</button>
+           </form>
           <br />
           <br />
+
+          <form class="col s12" method="POST" action="/dashboard/will/send/" enctype="multipart/form-data">
+  {% csrf_token %}
           <p class="lead">WARNING: Self-destruct Legacy to recieve your tokens. This action is not revertable. </p>
-          <button class="btn btn-xl btn-danger" id="kill" type="button submit">Self-destruct</button>
+          <button style="padding-bottom: 35px;" class="btn btn-xl btn-danger" id="kill" type="button submit">Self-destruct</button>
         </form>
     </div>
     </section>

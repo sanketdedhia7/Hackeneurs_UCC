@@ -67,17 +67,18 @@
         </li>
         <li class="divider"></li>
         <li>
-            <a href="/authen/viewprofile/">My Profile</a>
+            <a href="/dashboard/main/">Buy Cryptocurrencies</a>
         </li>
          <li class="divider"></li>
         <li>
-            <a href="/authen/topics/">My Topics</a>
+            <a href="/dashboard/crypto/">Live Price updates</a>
         </li>
          <li class="divider"></li>
         <li>
-            <a href="/authen/viewprofile/">Notifiations!</a>
+            <a href="/dashboard/convert/">Find Exchange Value</a>
         </li>
-        <li class="divider"></li>
+         <li class="divider"></li>
+ <li class="divider"></li>
         <li>
             <a href="/authen/myaccount/">My Account</a>
         </li>
@@ -125,14 +126,18 @@
                       {% endif %}
                    
                    
-                    <li><a href="/about/">About Us</a></li>
-                    <li><a href="/faq/">FAQ</a></li>
+                     <li>
+            <a href="/dashboard/will/">Create Digital Will</a>
+        </li>
+       
+
+                    <li><a href="/dashboard/predict/">Price Predictor</a></li>
                     {% if profile  %}
                     
                         {% if profile.profile_pic %}
                       
 
-                        <li id="profilepic"><a class="dropdown-button" href="#!" data-activates="dropdown1" data-beloworigin="true"><img style = " height : 30px; margin-bottom: -10px;" src="{{ profile.profile_pic.url }}"><i class="material-icons right">arrow_drop_down</i></a></li>
+                        <li id="profilepic"><a class="dropdown-button" href="#!" data-activates="dropdown1" data-beloworigin="true"><img style = " height : 30px; width: 90px; margin-bottom: -10px;" src="{{ profile.profile_pic.url }}"><i class="material-icons right">arrow_drop_down</i></a></li>
                         {% endif %}
                                 
                     {% else %}

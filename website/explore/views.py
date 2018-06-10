@@ -14,6 +14,13 @@ def dashboard(request):
     else:
         return redirect('/authen/login/')
 
+def chatbot(request):
+    if request.user.is_authenticated:
+        pr = Profile.objects.get(user=request.user)
+        return render(request, 'chatbot.html', {'profile': pr})
+    else:
+        return redirect('/authen/login/')
+
 def dashboard_home(request):
     if request.user.is_authenticated:
         pr = Profile.objects.get(user=request.user)
@@ -54,7 +61,7 @@ def willsubmit(request):
         creator=Profile.objects.get(user=request.user);
         percentage=request.POST['f2'];
         fly = Flyer.objects.create(
-             username=username, percentage=percentage, creater=creator)
+             username=username, percentage=percentage, creater=creator, owner=request.user)
         fly.save()
 
        # pr = Profile.objects.get(user=request.user)
@@ -62,6 +69,46 @@ def willsubmit(request):
         return render(request, 'will.html', {'profile': creator})
     else:
         return redirect('/authen/login/')
+
+
+def willsend(request):
+    if request.user.is_authenticated:
+        pr = Profile.objects.get(user=request.user)
+        #user = User.objects.get(username=p)
+        data = Flyer.objects.filter(owner = request.user)
+        print(data);
+        print("@@@@@@@@@@@-----WILL SENT----@@@@@@@@@@@@@@@@@@@@@@@@@@");
+        #p=Profile.objects.filter( Flyer__creator__contains=request.user )
+
+        
+
+        first=pr.description1;
+        second=pr.description2;
+        third=pr.description3;
+        
+        k=0;
+        for flyer in data:
+            print(flyer.username);
+            t=User.objects.get(username=flyer.username);
+            u=Profile.objects.get(user=t)
+            p=flyer.percentage;
+            u.description1=u.description1+p*0.01*first;
+            u.description2=u.description2+p*0.01*second;
+            u.description3=u.description3+p*0.01*third;
+
+            pr.description1=pr.description1-p*0.01*first;
+            pr.description2=pr.description2-p*0.01*second;
+            pr.description3=pr.description3-p*0.01*third;
+
+            pr.save();
+            u.save();
+        print(pr);
+        return render(request, 'moneyack.html', {'profile': pr, 'i': data})
+    else:
+        return redirect('/authen/login/')
+
+
+
 
 def predict(request):
     if request.user.is_authenticated:

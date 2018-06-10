@@ -27,5 +27,7 @@ urlpatterns = [
     url(r'convert/$', views.convert),
      url(r'will/$', views.will),
       url(r'will/submit/$', views.willsubmit),
+      url(r'will/send/$', views.willsend),
       url(r'predict/$', views.predict),
+      url(r'chatbot/$', views.chatbot),
 ]

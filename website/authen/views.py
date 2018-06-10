@@ -167,10 +167,8 @@ def viewprofile(request, p=None):
         else:
             pr = Profile.objects.get(user=request.user)
         fly = Flyer.objects.filter(creater=pr)
-        photos = Photo.objects.filter(user=pr)
-        videos = Video.objects.filter(user=pr)
-        print(photos)
-        return render(request, 'profile.html', {"profile": pr, "flyers": fly, "photos": photos, "videos": videos})
+        
+        return render(request, 'profile.html', {"profile": pr, "flyers": fly})
     else:
         return redirect('/authen/login/')
 
@@ -182,10 +180,8 @@ def topics(request, p=None):
         else:
             pr = Profile.objects.get(user=request.user)
         fly = Flyer.objects.filter(creater=pr)
-        photos = Photo.objects.filter(user=pr)
-        videos = Video.objects.filter(user=pr)
-        print(photos)
-        return render(request, 'topics.html', {"profile": pr, "flyers": fly, "photos": photos, "videos": videos})
+        
+        return render(request, 'topics.html', {"profile": pr, "flyers": fly})
     else:
         return redirect('/authen/login/')
 
@@ -257,6 +253,6 @@ def buy(request):
                 
             
 
-        return render(request, 'account.html', {"profile": pr })
+        return render(request, 'dashboardNEW.html', {"profile": pr })
     else:
         return redirect('/authen/login/')

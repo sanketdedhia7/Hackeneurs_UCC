@@ -1,0 +1,79 @@
+{% extends 'navbar.html' %} {% load static %} {% block content %}
+
+<title>Travel Share</title>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="https://fonts.googleapis.com/css?family=Montserrat:200" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css?family=Manuale" rel="stylesheet">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+<link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+
+<link rel="stylesheet" href="{% static 'authen/css/style.css' %}">
+<link rel="stylesheet" href="{% static 'authen/css/footer-distributed-with-address-and-phones.css' %}">
+<h4 style="font-family: 'Playfair Display', serif;  text-transform: capitalize; font-size: 2em;" class="center-align" id="Public-Profile-Header">User list</h4><hr style="width:5%; border: 1px solid #ccc;"/>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+<style type="text/css">
+    .footer-distributed  {
+  
+  bottom:0;
+}
+</style>
+
+<div class="row center" style="width:80%" style="text-align: center;margin: auto;">
+   <iframe
+    width="350"
+    height="430"
+    src="https://console.dialogflow.com/api-client/demo/embedded/14707657-82ba-436a-92f3-00d046b0de06">
+</iframe>
+  <br>
+  <br>
+</div>
+
+<br><br>
+  <br><br>
+  <br><br>
+  <br><br>
+  <br>
+  <br><br>
+  <br>
+
+
+
+
+<!-- close col-md-12 -->
+
+
+<!-- close col-md-12 
+
+    <div class="col-md-12" id="Public-Profile-Users-Flyers-Container">
+        <h4 id="Public-Profile-Header">{{profile.user.username}}'s TRAVEL VIDEOS</h4>
+        <hr>
+        <div class="col-md-12 gallery">
+            <div class="row">
+                {% for video in videos %}                    
+                <div class="col-xs-12 col-sm-12  col-md-6  gallery_image">
+                    <div class="img-wrap">
+                        <form method="post" action="http://davidtrushkov.com/travel/photos/112">
+                            <input type="hidden" name="_token" value="Tg5OWNRqqzUG9fLWKOUaDFkPUzf3l5nSyp8onTyC">
+                            <input type="hidden" name="_method" value="DELETE">
+
+                            <video class='center' controls>
+                                <source src="{{video.video.url}}" type="video/mp4">
+                            </video>
+                        </form>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    close col-md-12 -->
+</div>
+{% endblock content %}
+<!-- close container -->
