@@ -23,7 +23,7 @@ pip install -r requirements.txt
 
 And Run
 
-
+```
 python manage.py makemigrations
 python manage.py migrate --run-syncdb
 python manage.py collectstatic
