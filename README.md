@@ -4,6 +4,8 @@ Hackeneurs
 
 This web development project was built as a part of the hackathon, *The Ultimate Crypto Challenge - unifynd**.
 
+The Django website is developed with the aim of providing various tools to manage and control a cryptocurrency portfolio such as a performance dashboard, price predictor, real-time price watcher for several cryptocurrencies in  single page, real-time exchange rates between different currencies. The flagship feature of this project is the DIgital Will concept. A person can create a Digital Will linked to his cryptocurrency portfolio wallet where he can mention the beneficiaries and the proportion of wealth to be allocated to each of them. The Will will be validated with a trustee as well. The user can set a maximum time-period of no activity in the account after which the user is assumed dead and the wallet wealth will be distributed to the beneficiaries as mentioned in the Will.
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
