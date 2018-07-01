@@ -17,13 +17,13 @@ Follow the below steps :
 
 ```
 git clone https://github.com/sprerak48/Hackeneurs_UCC.git
-cd Hackeneurs_UCC
+cd Hackeneurs_UCC/website
 pip install -r requirements.txt
 ```
 
 And Run
 
-```
+
 python manage.py makemigrations
 python manage.py migrate --run-syncdb
 python manage.py collectstatic
